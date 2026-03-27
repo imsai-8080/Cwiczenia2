@@ -2,5 +2,6 @@
 
 public class Laptop : Device
 {
-    
+    public int RAM { get; set; }
+    public string CPU { get; set; }
 }

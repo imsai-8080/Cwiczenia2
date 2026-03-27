@@ -1,6 +1,6 @@
 ﻿namespace Cwiczenia2;
 
-public class Student : User
+public class Rental
 {
     
 }

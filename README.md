@@ -1,0 +1,3 @@
+Projekt zawiera zestaw podstawowych klas dla systemu uczelnianej wypożyczalni sprzętu.
+Klasa Program zawiera konsolową demonstację działania systemu. 
+Dane użytkowników systemu są przechowywane w klasie User. Dane na temat sprzętu zawierają klasy Camera, Laptop i Projector, które dziedziczą z bardziej ogólnej klasy Device. Klasa Rentals przechowuje informacje o wypożyczeniach sprzętu. Klasa serwisowa RentalService odpowiada za reguły wypożyczania. Klasa Report jest przeznaczona do generowania raportów z działaności wypożyczalni. W celach pomocniczych utworzono dwa enumy: UserType i AvailibilityStatus, odpowiadające za podział użytkowników na studentów i pracowników (w przyszłości będzie możliwe dodanie nowych kategorii użytkowników) oraz za status dostępności. 

@@ -3,6 +3,7 @@
 public class Device
 {
     private static int _counter = 0;
+    private static List<Device> _listOfDevices = new List<Device>();
 
     public int Id { get; }
     public string Name { get; set; }
@@ -13,6 +14,35 @@ public class Device
         Name = name;
         Availability = availability;
         Id = _counter++;
+        _listOfDevices.Add(this);
     }
 
+    public static void ShowListOfDevices()
+    {
+        foreach (var device in _listOfDevices)
+        {
+            Console.Write(device.Name);
+            if (device.Availability == AvailabilityStatus.Available)
+            {
+                Console.WriteLine(": Available");
+            }
+            else
+            {
+                Console.WriteLine(": Not Available");
+            }
+        }
+    }
+    
+    public static void ShowAvailableDevices()
+    {
+        foreach (var device in _listOfDevices)
+        {
+            if (device.Availability == AvailabilityStatus.Available)
+            {
+                Console.WriteLine(device.Name);
+            }
+        }
+    }
+    
+    
 }

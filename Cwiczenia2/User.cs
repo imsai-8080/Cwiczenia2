@@ -3,6 +3,7 @@
 public class User
 {
     private static int _counter = 0;
+    private List<User> _users = new List<User>();
     
     public int Id { get; set; }
     public string FirstName { get; set; }
@@ -15,5 +16,8 @@ public class User
         FirstName = firstName;
         LastName = lastName;
         UserType = userType;
+        _users.Add(this);
     }
+    
+    
 }

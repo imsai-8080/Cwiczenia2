@@ -3,6 +3,7 @@
 public class Rental
 {
     private static int _overdueFineRate = 5;
+    private static List<Rental> _listOfRentals = new List<Rental>();
     
     public DateTime DateOfRental { get; set; }
     public DateTime ExceptedDateOfReturn { get; set; }
@@ -17,7 +18,8 @@ public class Rental
         DateTime exceptedDateOfReturn,
         DateTime actualDateOfReturn,
         User rentalUser,
-        Device rentalDevice)
+        Device rentalDevice
+        )
     {
         DateOfRental = dateOfRental;
         ExceptedDateOfReturn = exceptedDateOfReturn;
@@ -30,5 +32,11 @@ public class Rental
             TimeSpan daysOverdue = ExceptedDateOfReturn - ActualDateOfReturn;
             OverdueFine = _overdueFineRate * daysOverdue.Days;
         }
+        _listOfRentals.Add(this);
+    }
+
+    public static List<Rental> GetListOfRentals()
+    {
+        return _listOfRentals;
     }
 }

@@ -19,9 +19,17 @@ public class Device
 
     public static void ShowListOfDevices()
     {
+        Console.WriteLine("List of devices:");
         foreach (var device in _listOfDevices)
         {
             Console.Write(device.Name);
+            switch (device.GetType().ToString())
+            {
+                case "Cwiczenia2.Camera": Console.Write(" (Camera)"); break;
+                case "Cwiczenia2.Laptop": Console.Write(" (Laptop)"); break;
+                case "Cwiczenia2.Projector":  Console.Write(" (Projector)"); break;
+                default: Console.WriteLine(" (Unknown device) "); break;
+            } 
             if (device.Availability == AvailabilityStatus.Available)
             {
                 Console.WriteLine(": Available");
@@ -30,11 +38,13 @@ public class Device
             {
                 Console.WriteLine(": Not Available");
             }
+
         }
     }
     
     public static void ShowAvailableDevices()
     {
+        Console.WriteLine("Available Devices:");
         foreach (var device in _listOfDevices)
         {
             if (device.Availability == AvailabilityStatus.Available)

@@ -32,6 +32,7 @@ public class Program(){
         RentalService.RentADevice(date1, date2, date4, user5, device4);
         Console.WriteLine("EXAMPLE: Overdue rental: ");
         RentalService.RentADevice(date1, date3, date2, user4, device6);
+        Report.GenerateReport();
     }
     
 }

@@ -3,7 +3,7 @@
 public class User
 {
     private static int _counter = 0;
-    private List<User> _users = new List<User>();
+    private static List<User> _users = new List<User>();
     
     public int Id { get; set; }
     public string FirstName { get; set; }
@@ -19,7 +19,7 @@ public class User
         _users.Add(this);
     }
     
-    public List<User> GetUserList(){
+    public static List<User> GetUserList(){
         return _users;
     }
 }

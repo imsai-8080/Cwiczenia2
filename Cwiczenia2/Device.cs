@@ -43,6 +43,10 @@ public class Device
             }
         }
     }
-    
+
+    public static List<Device> GetListOfDevices()
+    {
+        return _listOfDevices;
+    }
     
 }

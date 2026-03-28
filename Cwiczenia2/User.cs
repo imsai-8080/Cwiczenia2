@@ -19,5 +19,7 @@ public class User
         _users.Add(this);
     }
     
-    
+    public List<User> GetUserList(){
+        return _users;
+    }
 }
